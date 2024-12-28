@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image and Text</title>
+    <link rel="stylesheet" href="watch.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ShopEase</div>
+        <nav>
+          <a href="index.html">Home</a>
+          
+          <a href="watch.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+            <a href="login.html" class="header-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="add-to-cart.html" class="header-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+           
+          </div>
+      </header>
+    <div class="image-container">
+        <img src="./img/watch.jpg" alt="Background Image" class="background-image">
+        <div class="text-overlay">
+            <h1>Centered Text</h1>
+            <p>This is the text that appears at the center of the image.</p>
+        </div>
+    </div>
+
+    <section class="product-cards">
+        <div class="cards-row">
+            <div class="card">
+                <img src="./img/wa1.jpg" alt="Product Image">
+                <h3>Stainless Steel Watch</h3>
+                <p class="description">A classic and durable watch featuring a stainless steel.</p>
+                <p class="price" data-price="1500.00">₹1500.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1500.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/wa2.jpg" alt="Product Image">
+                <h3>Titanium Watch</h3>
+                <p class="description">A lightweight and hypoallergenic watch made from titanium.</p>
+                <p class="price" data-price="1800.00">₹1800.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1800.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/wa3.jpg" alt="Product Image">
+                <h3>Gold-Plated Watch</h3>
+                <p class="description">A watch with a base metal (often stainless steel) that is coated with a layer of gold..</p>
+                <p class="price" data-price="2000.00">₹2000.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="2000.00">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+   
+    <section class="product-cards">
+        <div class="cards-row">
+            <div class="card">
+                <img src="./img/wa4.jpg" alt="Product Image">
+                <h3>Bangle Watch</h3>
+                <p class="description">A watch designed to resemble a bracelet.</p>
+                <p class="price" data-price="2200.00">₹2200.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="2200.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/wa5.jpg" alt="Product Image">
+                <h3>Mesh Strap Watch</h3>
+                <p class="description">A watch featuring a woven metal mesh strap, often made from stainless steel..</p>
+                <p class="price" data-price="1500.00">₹1500.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1500.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/wa6.jpg" alt="Product Image">
+                <h3>Ceramic and Metal Watch</h3>
+                <p class="description">A watch that combines metal (like stainless steel) with ceramic elements.</p>
+                <p class="price" data-price="1000.00">₹1000.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1000.00">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 E-Shop. All rights reserved.</p>
+      </footer>
+    <script>
+        // Add to Cart Functionality
+        document.querySelectorAll(".add-to-cart").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const product = event.target.dataset.product;
+            const price = parseFloat(event.target.dataset.price);
+            const productDetails = {
+              name: product,
+              description: event.target.parentElement.querySelector(".description").textContent,
+              image: event.target.parentElement.querySelector("img").src,
+              price: price,
+            };
+    
+            // Retrieve existing cart items from local storage
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    
+            // Add the new product to the cart
+            cartItems.push(productDetails);
+    
+            // Save updated cart to local storage
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    
+            // Show the product name and price in an alert
+            alert(`Added to Cart:\n${product}\nPrice: $${price.toFixed(2)}`);
+    
+            // Navigate to the add-to-cart page
+            window.location.href = "add-to-cart.html";
+          });
+        });
+      </script>
+</body>
+</html>

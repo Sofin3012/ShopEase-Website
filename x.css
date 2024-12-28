@@ -1,0 +1,268 @@
+/* Basic reset for the page */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-image: url("./img/back3.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Makes the image static */
+    background-blend-mode: overlay; /* Blends the image with the background color */
+    background-color: rgba(177, 172, 172, 0.5); /* Adds a faded overlay */
+  }
+
+
+/* Container for the image */
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Adjusts to full viewport height */
+}
+
+/* Background image styling */
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text overlay styling */
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}
+
+.text-overlay h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.text-overlay p {
+    font-size: 1.2em;
+}
+/* General Section Styling */
+.product-cards {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Row Container for Cards */
+.cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Card Styling */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Title Styling */
+.card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #333;
+}
+
+/* Description Styling */
+.card .description {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Price Styling */
+.card .price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Ratings Styling */
+.card .ratings {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+/* Add to Cart Button Styling */
+.card .add-to-cart {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card .add-to-cart:hover {
+    background-color: #218838;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .cards-row {
+        justify-content: center;
+    }
+
+    .card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #2d4c28, #027604);
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .header-right {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .header-link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .header-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Icon Styling */
+  .header-link i {
+    font-size: 18px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav {
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+  
+    .header-right {
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+  }
+  footer {
+    background-color: #1f5629;
+    color: rgb(248, 246, 243);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+        .title h2 {
+            font-size: 30px;
+        }
+
+        .product-cards .card {
+            flex: 1 1 calc(50% - 20px);
+            max-width: calc(50% - 20px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .title h2 {
+            font-size: 24px;
+        }
+
+        .product-cards .card {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+
+        .add-to-cart {
+            font-size: 14px;
+            padding: 8px 10px;
+        }
+    }

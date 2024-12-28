@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image and Text</title>
+    <link rel="stylesheet" href="y.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ShopEase</div>
+        <nav>
+          <a href="index.html">Home</a>
+          
+          <a href="#about">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+            <a href="login.html" class="header-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="add-to-cart.html" class="header-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+           
+          </div>
+      </header>
+    <div class="image-container">
+        <img src="./img/shoe.jpg" alt="Background Image" class="background-image">
+        <div class="text-overlay">
+            <h1>SHOEWEAR</h1>
+            <p>Explore varieties of shoes !!.</p>
+        </div>
+    </div>
+
+    <section class="product-cards">
+        <div class="cards-row">
+            <div class="card">
+                <img src="./img/o1.jpeg" alt="Product Image">
+                <h3>Loafers</h3>
+                <p class="description">Slip-on shoes that are comfortable and stylish, loafers.</p>
+                <p class="price" data-price="1500.00">₹1500.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1500.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/o9.jpg" alt="Product Image">
+                <h3>Ballet Flats</h3>
+                <p class="description">Lightweight and flat shoes that offer a feminine touch, ballet flats are easy to wear.</p>
+                <p class="price" data-price="1000.00">₹1000.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1000.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/o7.jpg" alt="Product Image">
+                <h3>Sneakers</h3>
+                <p class="description">Versatile and comfortable, casual
+                     sneakers come in various styles and designs, making them perfect for everyday wear..</p>
+                <p class="price" data-price="1200.00">₹1200.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1200.00">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <section class="product-cards">
+        <div class="cards-row">
+            <div class="card">
+                <img src="./img/o4.png" alt="Product Image">
+                <h3>High-Top Sneakers</h3>
+                <p class="description">Sneakers that extend above the ankle, providing additional support and a distinctive style.</p>
+                <p class="price" data-price="800.00">₹800.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="800.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/o8.jpg" alt="Product Image">
+                <h3>Slip-On Shoes</h3>
+                <p class="description">Easy to wear and convenient, slip-on shoes come in various styles, including canvas, leather, and espadrilles.</p>
+                <p class="price" data-price="900.00">₹900.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="900.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/o6.png" alt="Product Image">
+                <h3>Moccasins</h3>
+                <p class="description">Soft, comfortable shoes made from leather or suede, moccasins often feature a flexible sole and a simple design.</p>
+                <p class="price" data-price="850.00">₹850.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="850.00">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 E-Shop. All rights reserved.</p>
+      </footer>
+    <script>
+        // Add to Cart Functionality
+        document.querySelectorAll(".add-to-cart").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const product = event.target.dataset.product;
+            const price = parseFloat(event.target.dataset.price);
+            const productDetails = {
+              name: product,
+              description: event.target.parentElement.querySelector(".description").textContent,
+              image: event.target.parentElement.querySelector("img").src,
+              price: price,
+            };
+    
+            // Retrieve existing cart items from local storage
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    
+            // Add the new product to the cart
+            cartItems.push(productDetails);
+    
+            // Save updated cart to local storage
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    
+            // Show the product name and price in an alert
+            alert(`Added to Cart:\n${product}\nPrice: $${price.toFixed(2)}`);
+    
+            // Navigate to the add-to-cart page
+            window.location.href = "add-to-cart.html";
+          });
+        });
+      </script>
+</body>
+</html>

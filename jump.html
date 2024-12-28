@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image and Text</title>
+    <link rel="stylesheet" href="jump.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ShopEase</div>
+        <nav>
+          <a href="index.html">Home</a>
+          
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+            <a href="login.html" class="header-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="add-to-cart.html" class="header-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+           
+          </div>
+      </header>
+    <div class="image-container">
+        <img src="./img/xb1.jpg" alt="Background Image" class="background-image">
+        <div class="text-overlay">
+            <h1>JUMPSUITS</h1>
+            <p>Explore the varieties of jumpsuits.</p>
+        </div>
+    </div>
+
+    <section class="product-cards">
+        <div class="cards-row">
+            <div class="card">
+                <img src="./img/x1.jpg" alt="Product Image">
+                <h3>Classic Jumpsuit</h3>
+                <p class="description">A one-piece garment with a fitted bodice and wide legs.</p>
+                <p class="price" data-price="1500.00">₹ 1500.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1500.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/x2.jpg" alt="Product Image">
+                <h3>Wide-Leg Jumpsuit</h3>
+                <p class="description">A jumpsuit with a loose, flowing leg design.</p>
+                <p class="price" data-price="800.00">₹ 800.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="800.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/x3.jpg" alt="Product Image">
+                <h3>Culotte Jumpsuit</h3>
+                <p class="description">A style that features wide, cropped legs, offering a trendy and modern look.</p>
+                <p class="price" data-price="500.00">₹ 500.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="500.00">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <section class="product-cards">
+        <div class="cards-row">
+            <div class="card">
+                <img src="./img/x4.jpg" alt="Product Image">
+                <h3>Off-the-Shoulder Jumpsuit</h3>
+                <p class="description">A fashionable jumpsuit that exposes the shoulders.</p>
+                <p class="price" data-price="1200.00">₹ 1200.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1200.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/x5.jpg" alt="Product Image">
+                <h3>Belted Jumpsuit</h3>
+                <p class="description">A jumpsuit that comes with a built-in belt or sash, cinching at the waist.</p>
+                <p class="price" data-price="1000.00">₹ 1000.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1000.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/x6.jpg" alt="Product Image">
+                <h3>Lace Jumpsuit</h3>
+                <p class="description">A jumpsuit made from lace or featuring lace details.</p>
+                <p class="price" data-price="700.00">₹ 700.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="700.00">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 E-Shop. All rights reserved.</p>
+      </footer>
+    
+    <script>
+        // Add to Cart Functionality
+        document.querySelectorAll(".add-to-cart").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const product = event.target.dataset.product;
+            const price = parseFloat(event.target.dataset.price);
+            const productDetails = {
+              name: product,
+              description: event.target.parentElement.querySelector(".description").textContent,
+              image: event.target.parentElement.querySelector("img").src,
+              price: price,
+            };
+    
+            // Retrieve existing cart items from local storage
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    
+            // Add the new product to the cart
+            cartItems.push(productDetails);
+    
+            // Save updated cart to local storage
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    
+            // Show the product name and price in an alert
+            alert(`Added to Cart:\n${product}\nPrice: $${price.toFixed(2)}`);
+    
+            // Navigate to the add-to-cart page
+            window.location.href = "add-to-cart.html";
+          });
+        });
+      </script>
+</body>
+</html>

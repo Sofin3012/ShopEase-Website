@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Background with Cards</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #f8e622, #756602);
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: rgb(12, 3, 3);
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .header-right {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .header-link {
+    text-decoration: none;
+    color: rgb(250, 244, 244);
+    font-size: 16px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .header-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Icon Styling */
+  .header-link i {
+    font-size: 18px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav {
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+  
+    .header-right {
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+  }
+  
+
+    /* Animated Background with Images */
+    .animated-background {
+      position: relative;
+      height: 100vh;
+      background: #f3f4f6;
+      overflow: hidden;
+    }
+
+    .animated-images {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      animation: slide 10s infinite linear;
+    }
+
+    .animated-images img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    @keyframes slide {
+      0% {
+        transform: translateX(0);
+      }
+      33% {
+        transform: translateX(-100%);
+      }
+      66% {
+        transform: translateX(-250%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+
+    /* Overlay Text */
+    .overlay-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(6, 0, 0);
+      text-align: center;
+    }
+
+    .overlay-text h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .overlay-text p {
+      font-size: 1.2rem;
+    }
+
+    /* Cards Section */
+    .product-cards {
+    padding: 40px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Row Container for Cards */
+.cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Card Styling */
+.card {
+    background-color: #f3f99a;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.card img {
+    width: 100%; /* Full width of the container */
+    height: 400px; /* Set a fixed height for uniformity */
+    border-radius: 8px; /* Rounded corners */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Title Styling */
+.card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #333;
+}
+
+/* Description Styling */
+.card .description {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Price Styling */
+.card .price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Ratings Styling */
+.card .ratings {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+/* Add to Cart Button Styling */
+.card .add-to-cart {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card .add-to-cart:hover {
+    background-color: #218838;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .cards-row {
+        justify-content: center;
+    }
+
+    .card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+footer {
+    background-color: #f68606;
+    color: rgb(54, 28, 2);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }
+  @media (max-width: 768px) {
+        .title h2 {
+            font-size: 30px;
+        }
+
+        .product-cards .card {
+            flex: 1 1 calc(50% - 20px);
+            max-width: calc(50% - 20px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .title h2 {
+            font-size: 24px;
+        }
+
+        .product-cards .card {
+            flex: 1 1 100%;
+            max-width: 100%;
+        }
+
+        .add-to-cart {
+            font-size: 14px;
+            padding: 8px 10px;
+        }
+    }
+  </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ShopEase</div>
+        <nav>
+          <a href="index.html">Home</a>
+          
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+            <a href="login.html" class="header-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="add-to-cart.html" class="header-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+           
+          </div>
+      </header>
+  <div class="animated-background">
+    <div class="animated-images">
+      <img src="./img/tb2.png" alt="Background Image 1">
+      <img src="./img/tb4.png" alt="Background Image 2">
+      <img src="./img/tb3.png" alt="Background Image 3">
+    </div>
+    
+  </div>
+
+  <section class="product-cards">
+    <div class="cards-row">
+        <div class="card">
+            <img src="./img/t1.jpg" alt="Product Image">
+            <h3>Bardot Top</h3>
+            <p class="description">A style that sits off the shoulders,
+             often with a fitted bodice and flared sleeves. </p>
+            <p class="price" data-price="1500.00">₹ 1500.00</p>
+            <div class="ratings">★★★★☆</div>
+            <button class="add-to-cart" data-product="Product Title 1" data-price="1500.00">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="./img/t2.jpg" alt="Product Image">
+            <h3>Turtleneck</h3>
+            <p class="description">A high-necked top that can be fitted or loose, providing warmth
+                 and a sophisticated look, suitable for layering.</p>
+            <p class="price" data-price="1000.00">₹ 1000.00</p>
+            <div class="ratings">★★★★☆</div>
+            <button class="add-to-cart" data-product="Product Title 1" data-price="1000.00">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="./img/t3.jpg" alt="Product Image">
+            <h3>Chiffon Top</h3>
+            <p class="description">A lightweight, sheer top made from chiffon fabric. 
+                </p>
+            <p class="price" data-price="900.00">₹ 900.00</p>
+            <div class="ratings">★★★★☆</div>
+            <button class="add-to-cart" data-product="Product Title 1" data-price="900.00">Add to Cart</button>
+        </div>
+    </div>
+</section>
+<section class="product-cards">
+    <div class="cards-row">
+        <div class="card">
+            <img src="./img/t4.jpg" alt="Product Image">
+            <h3>Crop Top</h3>
+            <p class="description">A short top that ends above the waist, 
+                often paired with high-waisted bottoms.</p>
+            <p class="price" data-price="1000.00">₹ 1000.00</p> <!-- Updated to ₹ -->
+            <div class="ratings">★★★★☆</div>
+            <button class="add-to-cart" data-product="Product Title 1" data-price="1000.00">Add to Cart</button>
+        </div>
+        
+        <div class="card">
+            <img src="./img/t5.jpg" alt="Product Image">
+            <h3>Peplum Top</h3>
+            <p class="description">A fitted top that flares out at the waist,
+                suitable for both casual and dressy occasions. </p>
+            <p class="price" data-price="1200.00">₹ 1200.00</p>
+            <div class="ratings">★★★★☆</div>
+            <button class="add-to-cart" data-product="Product Title 1" data-price="1200.00">Add to Cart</button>
+        </div>
+        <div class="card">
+            <img src="./img/t6.jpeg" alt="Product Image">
+            <h3>Off-the-Shoulder Top</h3>
+            <p class="description">A stylish top that exposes the shoulders, 
+                often featuring ruffles or elastic bands, perfect for summer outings.</p>
+            <p class="price" data-price="800.00">₹ 800.00</p>
+            <div class="ratings">★★★★☆</div>
+            <button class="add-to-cart" data-product="Product Title 1" data-price="800.00">Add to Cart</button>
+        </div>
+    </div>
+</section>
+<footer>
+    <p>&copy; 2024 E-Shop. All rights reserved.</p>
+  </footer>
+<script>
+    // Add to Cart Functionality
+    document.querySelectorAll(".add-to-cart").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        const product = event.target.dataset.product;
+        const price = parseFloat(event.target.dataset.price);
+        const productDetails = {
+          name: product,
+          description: event.target.parentElement.querySelector(".description").textContent,
+          image: event.target.parentElement.querySelector("img").src,
+          price: price,
+        };
+
+        // Retrieve existing cart items from local storage
+        let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+        // Add the new product to the cart
+        cartItems.push(productDetails);
+
+        // Save updated cart to local storage
+        localStorage.setItem("cartItems", JSON.stringify(cartItems));
+
+        // Show the product name and price in an alert
+        alert(`Added to Cart:\n${product}\nPrice: ₹${price.toFixed(2)}`);
+
+
+        // Navigate to the add-to-cart page
+        window.location.href = "add-to-cart.html";
+      });
+    });
+  </script>
+</body>
+</html> 

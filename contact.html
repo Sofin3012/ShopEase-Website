@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - E-commerce</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #f68c4a, #f96520);
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: rgb(5, 5, 5);
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .header-right {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .header-link {
+    text-decoration: none;
+    color: rgb(9, 9, 9);
+    font-size: 16px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .header-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Icon Styling */
+  .header-link i {
+    font-size: 18px;
+  }
+  
+
+    /* Contact Section */
+    .contact-us {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      padding: 50px 0;
+    }
+
+    .contact-form {
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      width: 50%;
+      max-width: 600px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .contact-form:hover {
+      transform: translateY(-10px);
+    }
+
+    .contact-form h2 {
+      color: #333;
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .contact-form label {
+      color: #555;
+      font-size: 16px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    .contact-form input[type="submit"] {
+      background-color: #ff7e5f;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+
+    .contact-form input[type="submit"]:hover {
+      background-color: #feb47b;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .contact-form {
+        width: 80%;
+        padding: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">ShopEase</div>
+    <nav>
+      <a href="index.html">Home</a>
+      
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-right">
+        <a href="login.html" class="header-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="add-to-cart.html" class="header-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+       
+      </div>
+  </header>
+
+  <section class="contact-us">
+    <form id="contactForm" class="contact-form">
+      <h2>Contact Us</h2>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="4" placeholder="Your message" required></textarea>
+
+      <input type="submit" value="Send Message">
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 E-Shop. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript for form validation and submission
+    document.getElementById('contactForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent form from submitting immediately
+
+      // Get the form fields
+      var name = document.getElementById('name').value;
+      var email = document.getElementById('email').value;
+      var message = document.getElementById('message').value;
+
+      // Check if all fields are filled
+      if (name === '' || email === '' || message === '') {
+        alert('Please fill in all fields.');
+        return;
+      }
+
+      // Basic email validation (check if it contains "@" and ".")
+      var emailPattern = /^[^@]+@[^@]+\.[^@]+$/;
+      if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      // Simulate a successful form submission (you can replace this with an actual submission process)
+      alert('Thank you for your message! We will get back to you soon.');
+
+      // Clear the form
+      document.getElementById('contactForm').reset();
+    });
+  </script>
+
+</body>
+</html>

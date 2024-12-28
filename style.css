@@ -1,0 +1,519 @@
+/* Global Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: url('./img/back.jpg') no-repeat center center fixed; 
+  background-size: cover;
+   /* Apply blur effect */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; 
+  background: linear-gradient(90deg, #f3eea2, #f3f05a);
+  color: rgb(96, 94, 11);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  height: 60px; 
+}
+.logo {
+  font-size: 24px; 
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  line-height: 1; /* Ensures text aligns vertically */
+}
+
+nav {
+  display: flex;
+  align-items: center; 
+  gap: 15px; 
+}
+
+nav a {
+  text-decoration: none;
+  color: rgb(67, 67, 4);
+  font-size: 20px; 
+  padding: 5px 8px; 
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center; 
+  gap: 10px; 
+}
+
+.header-link {
+  text-decoration: none;
+  color: white;
+  font-size: 20px; 
+  padding: 5px 8px; 
+  display: flex;
+  align-items: center; 
+  gap: 5px;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
+
+.header-link i {
+  font-size: 16px; /* Reduced icon size */
+}
+
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto; /* Adjust height for responsive design */
+  }
+
+  nav {
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .header-right {
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+}
+
+
+
+
+
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  position: relative; /* Keep hero content above blurred background */
+  z-index: 3;
+  background: url('./img/back.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+.hero-text {
+  max-width: 400px;
+}
+
+.hero-text h1 {
+  font-size: 50px;
+  margin-bottom: 10px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-shadow: #333;
+  
+
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.cta-btn {
+  padding: 5px 10px;
+  background: #ff6b6b;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  animation: bounce 2s infinite;
+}
+
+.cta-btn:hover {
+  background: #ff4c4c;
+}
+
+/* Carousel Section */
+.hero-image {
+  position: relative;
+  width: 600px;
+  height: 350px; /* Increased height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-carousel {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-image {
+  width: 250px; /* Increased width */
+  height: 280px; /* Increased height */
+  margin: 0 10px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: scale(0);
+  position: absolute;
+  animation: appear 10s infinite; /* Total animation cycle */
+}
+
+.carousel-image:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.carousel-image:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.carousel-image:nth-child(3) {
+  animation-delay: 4s;
+}
+
+.carousel-image:nth-child(4) {
+  animation-delay: 6s;
+}
+
+.carousel-image:nth-child(5) {
+  animation-delay: 8s;
+}
+
+/* Keyframes */
+@keyframes appear {
+  0%, 20% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  30%, 50% {
+    opacity: 1;
+    transform: scale(1.5); /* Expand in the center */
+  }
+  60%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+.product-cards {
+  padding: 50px 0;
+  
+  text-align: center;
+  background-image: url('./img/back3.jpg'); /* Ensure correct path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Ensure compatibility with browser */
+  background-blend-mode: overlay;
+ 
+
+}
+
+.product-cards h2 {
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+ 
+}
+
+.product-card {
+  width: 250px; /* Increased from 200px to 250px */
+  text-align: center;
+  min-height: 340px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.product-card:hover {
+  transform: scale(1.1);
+}
+
+.product-card img {
+  width: 100%;
+  height: 250px; /* Increased from 200px to 250px */
+  object-fit: cover;
+}
+.product-card h3 {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.shop-now-btn {
+  padding: 10px 20px;
+  background: #ff6b6b;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.shop-now-btn:hover {
+  background: #ff4c4c;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: #fff;
+  font-size: 14px;
+}
+
+/* Animations */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+
+.promo-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: #f3f3f3;
+  gap: 30px;
+  overflow: hidden;
+  position: relative;
+
+  background-image: url('./img/back3.jpg'); /* Ensure correct path */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Ensure compatibility with browser */
+  background-blend-mode: overlay;
+    
+}
+
+/* Image Container with Animation */
+.image-container {
+  flex: 1;
+  transform: scale(1);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.image-container img {
+  width: 100%;
+  max-width: 350px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.image-container:hover img {
+  transform: scale(1.1); /* Zooms in the image on hover */
+  box-shadow: 0px 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Promo Text with Sliding Animation */
+.promo-text {
+  flex: 2;
+  text-align: left;
+  font-family: 'Poppins', sans-serif;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateX(100%);
+      opacity: 0;
+  }
+  to {
+      transform: translateX(0);
+      opacity: 1;
+  }
+}
+
+/* Heading Styling */
+.promo-text h2 {
+  font-size: 3rem;
+  color: #ff5e57;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+  animation: bounceIn 1.5s ease-in-out infinite alternate; /* Adds a subtle bounce effect */
+}
+
+@keyframes bounceIn {
+  from {
+      transform: translateY(0);
+  }
+  to {
+      transform: translateY(-10px);
+  }
+}
+
+.promo-text h2 span {
+  font-size: 3.2rem;
+  font-weight: bold;
+  color: #ff9500;
+  display: inline-block;
+}
+
+/* Description Styling */
+.promo-text p {
+  font-size: 1.2rem;
+  color: #555;
+  margin-top: 20px;
+  line-height: 1.8;
+  animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+.bouncing-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px; /* Adjust height as needed */
+  background-color: #f3f3f3;
+  overflow: hidden; /* Ensures smooth animation without overflow issues */
+
+  background-image: url("./img/back3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Makes the image static */
+  background-blend-mode: overlay; /* Blends the image with the background color */
+   /* Adds a faded overlay */
+}
+
+
+.bouncing-image img {
+  width: 800px; /* Adjust the size of the image */
+  border-radius: 15px; /* Optional: Rounded corners */
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1); /* Adds a light shadow */
+  animation: bounce 2s infinite; /* Bouncing animation */
+}
+
+/* Bouncing Animation */
+@keyframes bounce {
+  0%, 100% {
+      transform: translateY(0); /* Original position */
+  }
+  50% {
+      transform: translateY(-30px); /* Moves the image upwards */
+  }
+}
+/* Container for the heading */
+div {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Style for the heading */
+h1.Discount {
+  font-family: 'Arial', sans-serif;
+  font-size: 58px;
+  font-weight: bold;
+  color: #0f0a4c;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  display: inline-block;
+}
+
+/* Adding a glowing effect */
+h1.Discount::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, rgba(134, 157, 250, 0.6), rgba(55, 58, 153, 0.6));
+  background-size: 200% 200%;
+  animation: glowing 1.5s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* Animation for the glowing effect */
+@keyframes glowing {
+  0% {
+    background-position: 200% 0;
+  }
+  50% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Adding a subtle shadow */
+/* Discount Heading */
+/* Discount Heading */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f9f9f9;
+}
+
+.horizontal-card-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 50px 10px;
+}
+
+.horizontal-card {
+  width: 90%;
+  max-width: 900px;
+  color: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  opacity: 1; /* Ensuring opacity is set to 1 by default */
+  transform: translateY(0); /* Initial state, no movement */
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* Specific styles for each card */
+.card-1 {
+  background: linear-gradient(120deg, #6a11cb, #2575fc); /* Purple to Blue */
+}
+
+.card-2 {
+  background: linear-gradient(120deg, #ff7e5f, #feb47b); /* Peach to Orange */
+}
+
+.card-3 {
+  background: linear-gradient(120deg, #43cea2, #185a9d); /* Green to Teal */
+}
+
+/* Fade-in animation */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px); /* Cards start from 30px below */
+}
+
+.horizontal-card h2 {
+  margin: 0 0 10px 0;
+  font-size: 28px;
+}
+
+.horizontal-card p {
+  margin: 0;
+  font-size: 18px;
+}

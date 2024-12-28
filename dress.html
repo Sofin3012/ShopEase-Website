@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discount Section</title>
+    <link rel="stylesheet" href="dress.css">
+    
+    <style>
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .title {
+            flex: 1;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .title h2 {
+            font-size: 60px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: rgb(15, 15, 15);
+            padding: 10px;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .letter {
+            display: inline-block;
+            padding: 5px;
+            font-size: 80px;
+            border: 3px solid white; /* White border around each letter */
+            border-radius: 5px; /* Optional: Rounded corners */
+        }
+
+        .title p {
+            font-size: 20px;
+            color: #191a1a;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .slider {
+            flex: 1;
+            overflow: hidden;
+            border: 4px solid rgb(41, 40, 40);
+            border-radius: 10px;
+            width: 600px;
+            height: 350px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+        }
+
+        .slider img {
+            width: 600px;
+            height: 350px;
+            object-fit: cover;
+            object-position: center;
+            animation: slide 10s infinite;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-100%); }
+            50% { transform: translateX(-200%); }
+            75% { transform: translateX(-300%); }
+            100% { transform: translateX(0); }
+        }
+
+        .slider-container {
+            display: flex;
+            width: 400%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">ShopEase</div>
+        <nav>
+          <a href="index.html">Home</a>
+          
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+            <a href="login.html" class="header-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="add-to-cart.html" class="header-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+           
+          </div>
+      </header>
+    <div class="container">
+        <div class="title">
+            <h2>
+                <span class="letter">D</span>
+                <span class="letter">R</span>
+                <span class="letter">E</span>
+                <span class="letter">S</span>
+                <span class="letter">S</span>
+                Exclusive Dresses for you!
+            </h2>
+            <p>Browse through our curated selection and find the dress that reflects
+                 your unique style. Shop now and embrace your beauty!"</p>
+        </div>
+
+        <div class="slider">
+            <div class="slider-container">
+                <img src="./img/sh.jpg" alt="Image 1">
+                <img src="./img/sh2.jpg" alt="Image 2">
+                <img src="./img/sh3.jpg" alt="Image 3">
+                <img src="./img/sh4.jpg" alt="Image 3">
+                
+            </div>
+        </div>
+    </div>
+    <div class="section-heading">
+        <h2>Our Featured Products</h2>
+    </div>
+    
+
+    <section class="product-cards">
+        <div class="cards-row">
+            <div class="card">
+                <img src="./img/f1.jpg" alt="Product Image">
+                <h3>A-Line Frock</h3>
+                <p class="description">A timeless style with a fitted 
+                    bodice and flared skirt, flattering all body types.</p>
+                <p class="price" data-price="1500.00">₹ 1500.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1500.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/f2.jpg" alt="Product Image">
+                <h3>Empire Waist Dress</h3>
+                <p class="description">Features a high waistline below
+                     the bust, creating a graceful and elongating silhouette.</p>
+                <p class="price" data-price="1000.00">₹ 1000.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1000.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/f3.jpg" alt="Product Image">
+                <h3>Fit and Flare Frock</h3>
+                <p class="description">A style that hugs the
+                     waist and flares out for a fun, youthful look.</p>
+                <p class="price" data-price="900.00">₹ 900.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="900.00">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <section class="product-cards">
+        <div class="cards-row">
+            <div class="card">
+                <img src="./img/f4.jpg" alt="Product Image">
+                <h3>Shift Frock</h3>
+                <p class="description">A loose, straight-cut dress 
+                    offering a simple, minimalist style for any occasion.</p>
+                <p class="price" data-price="1000.00">₹ 1000.00</p> <!-- Updated to ₹ -->
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1000.00">Add to Cart</button>
+            </div>
+            
+            <div class="card">
+                <img src="./img/f5.jpg" alt="Product Image">
+                <h3>Maxi Dress</h3>
+                <p class="description">A floor-length, elegant dress perfect 
+                    for evening events and relaxed occasions.</p>
+                <p class="price" data-price="1200.00">₹ 1200.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1200.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/f6.jpg" alt="Product Image">
+                <h3>Peplum Frock</h3>
+                <p class="description">A frock with a flared ruffle at the waist, creating
+                     an hourglass shape and adding volume.</p>
+                <p class="price" data-price="800.00">₹ 800.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="800.00">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 E-Shop. All rights reserved.</p>
+      </footer>
+    <script>
+        // Add to Cart Functionality
+        document.querySelectorAll(".add-to-cart").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const product = event.target.dataset.product;
+            const price = parseFloat(event.target.dataset.price);
+            const productDetails = {
+              name: product,
+              description: event.target.parentElement.querySelector(".description").textContent,
+              image: event.target.parentElement.querySelector("img").src,
+              price: price,
+            };
+    
+            // Retrieve existing cart items from local storage
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    
+            // Add the new product to the cart
+            cartItems.push(productDetails);
+    
+            // Save updated cart to local storage
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    
+            // Show the product name and price in an alert
+            alert(`Added to Cart:\n${product}\nPrice: ₹${price.toFixed(2)}`);
+
+    
+            // Navigate to the add-to-cart page
+            window.location.href = "add-to-cart.html";
+          });
+        });
+      </script>
+</body>
+</html>

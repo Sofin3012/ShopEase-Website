@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image and Text</title>
+    <link rel="stylesheet" href="purse.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ShopEase</div>
+        <nav>
+          <a href="index.html">Home</a>
+          
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+            <a href="login.html" class="header-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="add-to-cart.html" class="header-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+           
+          </div>
+      </header>
+    <div class="image-container">
+        <img src="./img/purse.jpg" alt="Background Image" class="background-image">
+        <div class="text-overlay">
+            <h1>Centered Text</h1>
+            <p>This is the text that appears at the center of the image.</p>
+        </div>
+    </div>
+
+    <section class="product-cards">
+        <div class="cards-row">
+            <div class="card">
+                <img src="./img/ps1.jpg" alt="Product Image">
+                <h3>Tote Bag</h3>
+                <p class="description">A spacious, open-top bag with sturdy handles, perfect for carrying everyday essentials.</p>
+                <p class="price" data-price="1500.00">₹1500.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1500.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/ps2.jpg" alt="Product Image">
+                <h3>Crossbody Bag</h3>
+                <p class="description">A small to medium-sized bag worn across the body with a long strap.</p>
+                <p class="price" data-price="1000.00">₹ 1000.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1000.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/ps3.jpeg" alt="Product Image">
+                <h3>Clutch</h3>
+                <p class="description">A small, handheld purse without a strap, typically used for formal occasions or nights out.</p>
+                <p class="price" data-price="1200.00">₹ 1200.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1200.00">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <section class="product-cards">
+        <div class="cards-row">
+            <div class="card">
+                <img src="./img/ps4.jpg" alt="Product Image">
+                <h3>Satchel</h3>
+                <p class="description">A structured bag with a top handle and often a detachable shoulder strap.</p>
+                <p class="price" data-price="1200.00">₹ 1200.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1200.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/ps5.jpg" alt="Product Image">
+                <h3>Backpack Purse</h3>
+                <p class="description">A smaller version of a traditional backpack, designed to be worn on the back..</p>
+                <p class="price" data-price="900.00">₹ 900.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="900.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/ps6.jpg" alt="Product Image">
+                <h3>Bucket Bag</h3>
+                <p class="description">A soft, cylindrical bag with a drawstring closure, bucket bags are trendy and spacious.</p>
+                <p class="price" data-price="800.00">₹ 800.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="800.00">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 E-Shop. All rights reserved.</p>
+      </footer>
+    <script>
+        // Add to Cart Functionality
+        document.querySelectorAll(".add-to-cart").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const product = event.target.dataset.product;
+            const price = parseFloat(event.target.dataset.price);
+            const productDetails = {
+              name: product,
+              description: event.target.parentElement.querySelector(".description").textContent,
+              image: event.target.parentElement.querySelector("img").src,
+              price: price,
+            };
+    
+            // Retrieve existing cart items from local storage
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    
+            // Add the new product to the cart
+            cartItems.push(productDetails);
+    
+            // Save updated cart to local storage
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    
+            // Show the product name and price in an alert
+            alert(`Added to Cart:\n${product}\nPrice: $${price.toFixed(2)}`);
+    
+            // Navigate to the add-to-cart page
+            window.location.href = "add-to-cart.html";
+          });
+        });
+      </script>
+</body>
+</html>

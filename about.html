@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - E-commerce</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #2d4c28, #027604);
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .header-right {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .header-link {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .header-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Icon Styling */
+  .header-link i {
+    font-size: 18px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav {
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+  
+    .header-right {
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+  }
+  
+
+    /* About Us Section */
+    .about-us {
+      padding: 50px 10%;
+      text-align: center;
+      background-color: #fff;
+    }
+
+    .about-us h1 {
+      font-size: 36px;
+      color: #333;
+    }
+
+    .about-us p {
+      font-size: 18px;
+      color: #555;
+      margin: 20px 0;
+    }
+
+    .team {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 50px;
+    }
+
+    .team-member {
+      width: 30%;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: opacity 1s, transform 1s;
+    }
+
+    .team-member h3 {
+      font-size: 20px;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    .team-member p {
+      font-size: 16px;
+      color: #777;
+    }
+
+    .team-member img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      transition: transform 0.3s;
+    }
+
+    .team-member img:hover {
+      transform: scale(1.1);
+    }
+
+    /* Animation for team members */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Footer */
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+      .team {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .team-member {
+        width: 80%;
+        margin-bottom: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">ShopEase</div>
+        <nav>
+          <a href="index.html">Home</a>
+          
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+            <a href="login.html" class="header-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="add-to-cart.html" class="header-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+           
+          </div>
+      </header>
+
+  <section class="about-us">
+    <h1>About Us</h1>
+    <p>We are passionate about providing high-quality products at affordable prices. Our team works tirelessly to bring you the best deals and an exceptional shopping experience.</p>
+    <div class="team">
+      <div class="team-member">
+        <img src="./img/p1.png" alt="Team Member 1" class="team-img">
+        <h3>John Doe</h3>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="team-member">
+        <img src="./img/p2.png" alt="Team Member 2" class="team-img">
+        <h3>Jane Smith</h3>
+        <p>Marketing Director</p>
+      </div>
+      <div class="team-member">
+        <img src="./img/p3.png" alt="Team Member 3" class="team-img">
+        <h3>Emily Johnson</h3>
+        <p>Product Manager</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2024 E-Shop. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Scroll animation for team members
+    window.addEventListener('scroll', function() {
+      const teamMembers = document.querySelectorAll('.team-member');
+
+      teamMembers.forEach(member => {
+        const position = member.getBoundingClientRect();
+        if (position.top < window.innerHeight && position.bottom >= 0) {
+          member.style.opacity = 1;
+          member.style.transform = 'translateY(0)';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

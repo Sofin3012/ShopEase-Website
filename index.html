@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative E-Commerce</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo">ShopEase</div>
+    <nav>
+      <a href="index.html">Home</a>
+      
+      <a href="#about">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="header-right">
+        <a href="login.html" class="header-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+        <a href="add-to-cart.html" class="header-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+       
+      </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <h1>Discover the Best Deals</h1>
+      <p>Shop your favorite items at unbeatable prices!</p>
+      
+    </div>
+    <div class="hero-image">
+      <div class="image-carousel">
+        <img src="./img/i1.jpg" alt="Image 1" class="carousel-image">
+        <img src="./img/top2.jpg" alt="Image 2" class="carousel-image">
+        <img src="./img/floral2.jpg" alt="Image 3" class="carousel-image">
+        <img src="./img/i4.jpg" alt="Image 4" class="carousel-image">
+        <img src="./img/i5.jpg" alt="Image 5" class="carousel-image">
+      </div>
+    </div>
+  </section>
+  <section id="products" class="product-cards">
+    <h2>Our Featured Products</h2>
+    <div class="cards-container">
+      <div class="product-card">
+        <img src="./img/frock.png" alt="Product 1">
+        <h3>Dresses</h3>
+        <a href="dress.html" class="shop-now-btn">Shop Now</a>
+      </div>
+    
+    
+      <div class="product-card">
+        <img src="./img/top.png" alt="Product 2">
+        <h3>Tops</h3>
+        <a href="top.html" class="shop-now-btn">Shop Now</a>
+      </div>
+      <div class="product-card">
+        <img src="./img/jean.png" alt="Product 3">
+        <h3>Jeans</h3>
+        <a href="jeans.html" class="shop-now-btn">Shop Now</a>
+      </div>
+      <div class="product-card">
+        <img src="./img/j.png" alt="Product 3">
+        <h3>Jumpsuits</h3>
+        <a href="jump.html" class="shop-now-btn">Shop Now</a>
+      </div>
+    </div>
+    </section>
+        
+
+  <section id="products" class="product-cards">
+    
+    <div class="cards-container">
+      <div class="product-card">
+        <img src="./img/e1.png "alt="Product 1">
+        <h3>Ethnic Wear</h3>
+        <a href="x.html" class="shop-now-btn">Shop Now</a>
+      </div>
+      <div class="product-card">
+        <img src="./img/w1.png" alt="Product 2">
+        <h3>Watches</h3>
+        <a href="watch.html" class="shop-now-btn">Shop Now</a>
+      </div>
+      <div class="product-card">
+        <img src="./img/ps2.jpg" alt="Product 3">
+        <h3>Handbags</h3>
+        <a href="purse.html" class="shop-now-btn">Shop Now</a>
+      </div>
+      <div class="product-card">
+        <img src="./img/s1.png" alt="Product 3">
+        <h3>Shoes</h3>
+        <a href="y.html" class="shop-now-btn">Shop Now</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="promo-section">
+    <div class="promo-text">
+        <h2>Get Your <span class="highlight">Dream Deals</span></h2>
+        <p class="animated-text"></p>
+        <p>Discover the elegance of tradition with our exclusive
+           discounts on ethnic clothing! From graceful sarees and vibrant
+            lehengas to sophisticated kurtas and stunning anarkalis,
+             we have the perfect ensemble for every occasion. 
+             Enjoy up to 50% off on our latest collection, meticulously
+              designed to celebrate cultural heritage with a modern touch.</p>
+    </div>
+    <div class="image-container">
+        <img src="./img/aaaaa.png" alt="Promo Image">
+    </div>
+</div>
+<div>
+  <h1 class="Discount">Exclusive Discounts !!</h1>
+</div>
+<div class="bouncing-image">
+  <img src="./img/dis.jpg" alt="Bouncing Image">
+ 
+</div>
+<div class="horizontal-card-container">
+    <div class="horizontal-card card-1 fade-in hidden">
+      <h2>Unbeatable Discounts</h2>
+      <p>Get up to 70% off on your favorite brands and products. Shop now and save big!</p>
+    </div>
+    <div class="horizontal-card card-2 fade-in hidden">
+      <h2>Ethnic Clothing Offers</h2>
+      <p>Celebrate traditions in style with exclusive discounts on sarees, kurtas, and lehengas.</p>
+    </div>
+    <div class="horizontal-card card-3 fade-in hidden">
+      <h2>Free Shipping Deals</h2>
+      <p>Enjoy free shipping on orders above $100. Don't let delivery fees hold you back!</p>
+    </div>
+  </div>
+
+
+ 
+  
+
+
+  <footer>
+    <div class="footer-content">
+      <p>© 2024 ShopEase. All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script>
+   document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".horizontal-card");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.remove("hidden");
+        }
+      });
+    },
+    { threshold: 0.3 } // Trigger when 30% of the card is visible
+  );
+
+  cards.forEach((card) => observer.observe(card));
+});
+
+
+  </script>
+  
+  
+  
+</body>
+</html>

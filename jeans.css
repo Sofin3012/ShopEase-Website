@@ -1,0 +1,238 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('./img/jb5.jpg'); /* Use the desired image */
+    background-size: cover; /* Ensures the image covers the whole page */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Keeps the image fixed during scrolling */
+}
+
+
+img {
+    width: 100%;
+    height: auto;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: linear-gradient(90deg, #6eb4f4, #2f2fc5);
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  
+  nav {
+    display: flex;
+    gap: 20px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: rgb(249, 243, 243);
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .header-right {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .header-link {
+    text-decoration: none;
+    color: rgb(250, 244, 244);
+    font-size: 16px;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+  }
+  
+  .header-link:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  /* Icon Styling */
+  .header-link i {
+    font-size: 18px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    nav {
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+  
+    .header-right {
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+  }
+  
+
+/* Product Cards */
+.product-cards {
+    padding: 40px;
+    background-color: #9fc7ed;
+    text-align: center;
+}
+
+/* Row Container for Cards */
+.cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+/* Card Styling */
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Styling */
+.card img {
+    width: 100%; /* Full width of the container */
+    height: 400px; /* Set a fixed height for uniformity */
+    border-radius: 8px; /* Rounded corners */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+}
+
+/* Title Styling */
+.card h3 {
+    font-size: 1.5rem;
+    margin: 15px 0;
+    color: #333;
+}
+
+/* Description Styling */
+.card .description {
+    font-size: 1rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Price Styling */
+.card .price {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Ratings Styling */
+.card .ratings {
+    color: #ffd700;
+    margin-bottom: 15px;
+}
+
+/* Add to Cart Button Styling */
+.card .add-to-cart {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.card .add-to-cart:hover {
+    background-color: #218838;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .cards-row {
+        justify-content: center;
+    }
+
+    .card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+.section-heading {
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.section-heading h2 {
+    font-size: 2.5rem;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    background: linear-gradient(to right, #02224f, #1b64f7);
+    -webkit-background-clip: text; /* Add the missing hyphen */
+    color: transparent;
+    margin: 0;
+}
+
+
+.section-heading h2::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 3px;
+    background: #2f77ec;
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+footer {
+    background-color: #4073f4;
+    color: rgb(54, 28, 2);
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+  }

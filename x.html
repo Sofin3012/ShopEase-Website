@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Image and Text</title>
+    <link rel="stylesheet" href="x.css">
+</head>
+<body>
+    <header>
+        <div class="logo">ShopEase</div>
+        <nav>
+          <a href="index.html">Home</a>
+          
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <div class="header-right">
+            <a href="login.html" class="header-link"><i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href="add-to-cart.html" class="header-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+           
+          </div>
+      </header>
+    <div class="image-container">
+        <img src="./img/suit.jpg" alt="Background Image" class="background-image">
+        
+    </div>
+
+    <section class="product-cards">
+        <div class="cards-row">
+            <div class="card">
+                <img src="./img/sw1.png" alt="Product Image">
+                <h3>Patiala Suit</h3>
+                <p class="description">Patiala suit is known for its comfort and traditional appeal.</p>
+                <p class="price" data-price="1500.00">₹ 1500.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1500.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/sw2.jpg" alt="Product Image">
+                <h3>Anarkali Suit</h3>
+                <p class="description">This style features a long, flowing kurta that flares out from the waist, resembling the silhouette of a gown.</p>
+                <p class="price" data-price="2500.00">₹2500.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="2500.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/sw3.jpg" alt="Product Image">
+                <h3>Floor-Length Anarkali</h3>
+                <p class="description">This style features a longer kurta that reaches the floor. </p>
+                <p class="price" data-price="3000.00">₹3000.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="3000.00">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <section class="product-cards">
+        <div class="cards-row">
+            <div class="card">
+                <img src="./img/sw4.jpeg" alt="Product Image">
+                <h3>Palazzo Suit</h3>
+                <p class="description">This modern style features wide-legged palazzo pants paired with a shorter kurta.</p>
+                <p class="price" data-price="2000.00">₹2000.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="2000.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/sw5.jpg" alt="Product Image">
+                <h3>Straight Cut Suit</h3>
+                <p class="description">This type has a straight-cut kurta that falls evenly from the shoulders to the hem.</p>
+                <p class="price" data-price="2500.00">₹2500.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="2500.00">Add to Cart</button>
+            </div>
+            <div class="card">
+                <img src="./img/sw6.jpg" alt="Product Image">
+                <h3>Churidar Suit</h3>
+                <p class="description">This is a brief description of Product 1.</p>
+                <p class="price" data-price="1000.00">₹1000.00</p>
+                <div class="ratings">★★★★☆</div>
+                <button class="add-to-cart" data-product="Product Title 1" data-price="1000.00">Add to Cart</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2024 E-Shop. All rights reserved.</p>
+      </footer>
+    <script>
+        // Add to Cart Functionality
+        document.querySelectorAll(".add-to-cart").forEach((button) => {
+          button.addEventListener("click", (event) => {
+            const product = event.target.dataset.product;
+            const price = parseFloat(event.target.dataset.price);
+            const productDetails = {
+              name: product,
+              description: event.target.parentElement.querySelector(".description").textContent,
+              image: event.target.parentElement.querySelector("img").src,
+              price: price,
+            };
+    
+            // Retrieve existing cart items from local storage
+            let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+    
+            // Add the new product to the cart
+            cartItems.push(productDetails);
+    
+            // Save updated cart to local storage
+            localStorage.setItem("cartItems", JSON.stringify(cartItems));
+    
+            // Show the product name and price in an alert
+            alert(`Added to Cart:\n${product}\nPrice: $${price.toFixed(2)}`);
+    
+            // Navigate to the add-to-cart page
+            window.location.href = "add-to-cart.html";
+          });
+        });
+      </script>
+</body>
+</html>
